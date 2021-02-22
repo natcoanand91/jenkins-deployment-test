@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-            sh 'mvn -B -U -e -V clean -DskipTests package'
+            sh 'mvn -B -U -e -V -X clean -DskipTests package'
       }
     }
 
@@ -24,7 +24,7 @@ pipeline {
         APP_NAME = 'jenkins-deployment-test-dev'
       }
       steps {
-            sh 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USERNAME%" -Danypoint.password="%DEPLOY_CREDS_PASSWORD%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"'
+            sh 'mvn -X -U -V -e -B -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USERNAME%" -Danypoint.password="%DEPLOY_CREDS_PASSWORD%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"'
       }
     }
     
