@@ -24,7 +24,7 @@ pipeline {
         APP_NAME = 'jenkins-deployment-test-dev'
       }
       steps {
-            sh 'mvn -X -U -V -e -B -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="natcoanand_adesso_internal" -Danypoint.password="Mani123!!" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="adesso SE" -Dcloudhub.worker="%WORKER%"'
+            sh 'mvn -X -U -V -e -B -DskipTests deploy -DmuleDeploy -Dmule.version="4.3.0-20201013" -Danypoint.username="natcoanand_adesso_internal" -Danypoint.password="Mani123!!" -Dcloudhub.app="jenkins-deployment-test-dev" -Dcloudhub.environment="Sandbox" -Dcloudhub.bg="adesso SE" -Dcloudhub.worker="Micro"'
       }
     }
     
