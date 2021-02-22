@@ -4,7 +4,7 @@
 
 	<groupId>com.adesso</groupId>
 	<artifactId>jenkins-deployment-test</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
 	<name>jenkins-deployment-test</name>
